@@ -8,4 +8,5 @@ export type CharacterContextType = {
   setCharacters: Dispatch<SetStateAction<CharacterType[]>>
   selectedCharacter: CharacterType | null
   setSelectedCharacter: Dispatch<SetStateAction<CharacterType | null>>
+  resetFavourites: () => void
 }

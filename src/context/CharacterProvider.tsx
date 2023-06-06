@@ -18,6 +18,10 @@ const CharacterProvider: FC<Props> = ({ children }) => {
     null
   )
 
+  function resetFavourites() {
+    setFavourites([])
+  }
+
   const contextValue = {
     characters,
     setCharacters,
@@ -25,6 +29,7 @@ const CharacterProvider: FC<Props> = ({ children }) => {
     setFavourites,
     selectedCharacter,
     setSelectedCharacter,
+    resetFavourites,
   }
 
   return (
