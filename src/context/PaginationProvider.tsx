@@ -1,4 +1,4 @@
-import { PaginationContextType } from '@/types/PaginationContextType'
+import { PaginationContextType } from '@/context/types/PaginationContextType'
 
 import { FC, ReactNode, createContext, useState } from 'react'
 

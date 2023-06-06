@@ -4,11 +4,12 @@ import { getFilteredCharacters } from '@/utils/getFilteredCharacters'
 import { ParamListBase, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { FC } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
+import { styles } from './CharacterItemStyles'
 
 type Props = {
-  character: CharacterType 
+  character: CharacterType
   index: number
 }
 
@@ -59,33 +60,9 @@ const CharacterItem: FC<Props> = ({ character, index }) => {
         </TouchableOpacity>
       </View>
       <Text style={styles.genderCol}>{gender}</Text>
-      <Text style={{ justifyContent: 'flex-end' }}>{birth_year}</Text>
+      <Text style={styles.yearCol}>{birth_year}</Text>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  characterCard: {
-    marginTop: 10,
-    padding: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#F7F5F2',
-  },
-  firstCol: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 15,
-    width: '30%',
-  },
-  genderCol: {
-    textAlign: 'center',
-  },
-  nameText: {
-    maxWidth: '100%',
-    color: '#21007F',
-  },
-})
 
 export default CharacterItem

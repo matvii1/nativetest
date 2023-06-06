@@ -1,6 +1,7 @@
 import { FC } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import { styles } from './ListHeaderStyles'
 
 type Props = {
   handleSort: () => void
@@ -19,23 +20,5 @@ const ListHeader: FC<Props> = ({ handleSort }) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  headerWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 15,
-    paddingBottom: 7,
-  },
-  nameWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-  },
-  listTitle: {
-    fontWeight: '600',
-  },
-})
 
 export default ListHeader

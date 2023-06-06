@@ -1,13 +1,15 @@
-import CharacterItem from '@/components/CharacterItem'
-import ErrorMessage from '@/components/ErrorMessage'
-import LoadingMessage from '@/components/LoadingMessage'
-import { useCharacter } from '@/hooks/useCharacter'
-import { useCharacterContext } from '@/hooks/useCharacterContext'
-import { usePaginationContext } from '@/hooks/usePaginationContext'
-import { useToggleSort } from '@/hooks/useToggle'
+import ErrorMessage from '@/common/ErrorMessage/ErrorMessage'
+import LoadingMessage from '@/common/LoadingState/LoadingState'
+import {
+  useCharacter,
+  useCharacterContext,
+  usePaginationContext,
+  useToggleSort,
+} from '@/hooks'
+import { CharacterItem, ListHeader } from '@/screens/Home/components'
 import { FC, useMemo } from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
-import ListHeader from './ListHeader'
+import { FlatList, View } from 'react-native'
+import { styles } from './CharacterListStyles'
 
 const CharacterList: FC = () => {
   const { pageNumber } = usePaginationContext()
@@ -50,16 +52,5 @@ const CharacterList: FC = () => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  characterWrapper: {
-    marginTop: 20,
-  },
-  listWrapper: {
-    width: '100%',
-    height: '90%',
-    paddingBottom: 120,
-  },
-})
 
 export default CharacterList

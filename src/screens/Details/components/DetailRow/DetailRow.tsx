@@ -1,5 +1,6 @@
 import { FC } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
+import { styles } from './DetailRowStyles'
 
 type Props = {
   name: string
@@ -14,17 +15,5 @@ const DetailRow: FC<Props> = ({ name, value }) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  descriptionCard: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    gap: 10,
-  },
-  descriptionText: {
-    fontSize: 19,
-    fontWeight: '400',
-  },
-})
 
 export default DetailRow

@@ -1,10 +1,11 @@
 import { useCharacterContext } from '@/hooks/useCharacterContext'
+import { DetailRow } from '@/screens/Details/components'
 import { CharacterType } from '@/types/CharacterType'
 import { getFilteredCharacters } from '@/utils/getFilteredCharacters'
 import { FC } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
-import DetailRow from './DetailRow'
+import { styles } from './DetailsCardStyles'
 
 type Props = {
   characterDetails: CharacterType
@@ -60,30 +61,5 @@ const DetailsCard: FC<Props> = ({ characterDetails }) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  characterCard: {
-    marginTop: 0,
-    paddingHorizontal: 20,
-    paddingTop: 30,
-    backgroundColor: '#F7F5F2',
-    flexGrow: 1,
-  },
-  descriptionWrapper: {
-    marginTop: 25,
-    gap: 8,
-  },
-  titleWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 15,
-    width: '100%',
-  },
-  nameText: {
-    maxWidth: '100%',
-    fontSize: 25,
-    fontWeight: '600',
-  },
-})
 
 export default DetailsCard

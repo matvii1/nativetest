@@ -1,4 +1,4 @@
-import { CharacterContextType } from '@/types/CharacterContextType'
+import { CharacterContextType } from '@/context/types/CharacterContextType'
 import { CharacterType } from '@/types/CharacterType'
 
 import { FC, ReactNode, createContext, useState } from 'react'

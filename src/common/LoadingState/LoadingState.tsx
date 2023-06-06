@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import { ActivityIndicator, StyleSheet, View } from 'react-native'
+import { styles } from './LoadingStateStyles'
 
-const LoadingMessage: FC = () => {
+const LoadingState: FC = () => {
   return (
     <View style={styles.loadingWrapper}>
       <ActivityIndicator size="small" color="#" />
@@ -9,12 +10,4 @@ const LoadingMessage: FC = () => {
   )
 }
 
-const styles = StyleSheet.create({
-  loadingWrapper: {
-    marginTop: '45%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
-
-export default LoadingMessage
+export default LoadingState

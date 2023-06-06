@@ -7,7 +7,7 @@ export function useCharacterDetails() {
   const [characterDetails, setCharacterDetails] = useState<CharacterType | null>(
     null
   )
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
   const { selectedCharacter } = useCharacterContext()
 
@@ -19,15 +19,16 @@ export function useCharacterDetails() {
 
         const CHARACTER_URL = selectedCharacter.url
         const characterDetails = await starwarsService.getByUrl(CHARACTER_URL)
-
+        
         if (characterDetails) {
           setCharacterDetails(characterDetails)
+
+          setIsLoading(false)
+          setIsError(false)
         }
 
-        setIsLoading(false)
-        setIsError(false)
       }
-
+      
       fetch()
     } catch (error) {
       setIsLoading(false)
